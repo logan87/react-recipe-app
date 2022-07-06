@@ -16,8 +16,8 @@ const RecipeDetail = () => {
   const data = useSelector(getSelectedRecipe)
   const dataSimilar = useSelector(getAllSimilarRecipes)
   useEffect(() => {
-    dispatch(getAsyncRecipeDetail(id))
-    dispatch(getSimilarRecipes(id))
+    id && dispatch(getAsyncRecipeDetail(id))
+    id && dispatch(getSimilarRecipes(id))
     return () => {
       dispatch(removeSelectedRecipe())
     }
